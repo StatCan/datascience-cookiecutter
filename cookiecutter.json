@@ -1,7 +1,7 @@
 {
     "project_name_en": "Your new project name",
     "project_name_fr": "Votre nom de projet",
-    "organization_name": "StatCan",
+    "organisation": "StatCan",
     "repo_name": "{{ cookiecutter.project_name_en.lower().replace(' ', '-') }}",
     "project_version": "0.0.1",
 
