@@ -10,6 +10,10 @@
    :maxdepth: 2
    :caption: Contents:
 
+   usage/index
+   methodology/index
+   decisions/index
+   reference/index
 
 
 Indices and tables
