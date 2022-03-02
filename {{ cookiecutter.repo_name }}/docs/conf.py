@@ -62,6 +62,10 @@ release = "{{ cookiecutter.project_version }}"
 # html_extra_path
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "README.md"]
 
+# Internationalization support
+locale_dirs = ['locale/']
+gettext_compact = False
+
 # -- Options for HTML output -----------------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for a list of
