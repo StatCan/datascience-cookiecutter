@@ -1,7 +1,9 @@
 .PHONY:
 	coverage
 	docs
+	messages
 	prepare_docs_folder
+	requirements
 
 # Supported CLI arguments
 DOCS_SOURCEDIR	   = ./docs
@@ -20,7 +22,7 @@ prepare_docs_folder:
 	if [ ! -d "${DOCS_BUILDDIR}" ]; then mkdir "${DOCS_BUILDDIR}"; fi
 	find "${DOCS_BUILDDIR}" -mindepth 1 -maxdepth 1 -type d -exec rm -rf {} \;
 
-# Extract translatable messages into pot files
+# Extract translatable messages for translation
 messages:
 	sphinx-build -M gettext "$(DOCS_SOURCEDIR)"
 	sphinx-intl update -p _build/gettext -l fr
