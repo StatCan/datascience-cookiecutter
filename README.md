@@ -2,7 +2,7 @@
 
 ## Data Science Cookiecuttter
 
-A cookiecutter template for data science projects within Statistics Canada and wider public sector.
+A ``cookiecutter`` template for data science projects within Statistics Canada and wider public sector. The goal is to reduce the amount of set up tasks associated with starting data science projects at Statistics Canada.
 
 This template helps to set up standardized project, and includes security features using pre-commit hooks.
 
@@ -20,10 +20,11 @@ ______________________
 
 ## Le nom du projet
 
-- Quel est ce projet?
-- Comment ça marche?
-- Qui utilisera ce projet?
-- Quel est le but de ce projet?
+Un gabarit ``cookiecutter`` pour les projets de science des données à Statistique Canada et dans le secteur public en général. L'objectif est de réduire le nombre de tâches de mise en place associées au démarrage de projets de science des données à Statistique Canada.
+
+Ce modèle aide à mettre en place un projet standardisé et comprend des fonctions de sécurité utilisant des crochets de pré-commit.
+
+Traduit avec www.DeepL.com/Translator (version gratuite)
 
 ### Comment contribuer
 
