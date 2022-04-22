@@ -1,16 +1,19 @@
-.. Data Science Cookiecutter documentation master file, created by
-   sphinx-quickstart on Mon Feb 28 17:23:47 2022.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to Data Science Cookiecutter's documentation!
+Data Science Cookiecutter documentation!
 =====================================================
+
+A ``cookiecutter`` template for data science projects within Statistics Canada and wider
+public sector. The goal is to reduce the amount of set up tasks associated with starting
+data science projects at Statistics Canada.
+
+This template helps to set up standardized project, and includes security features using
+pre-commit hooks.
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-
+   README
+   structure/index
 
 Indices and tables
 ==================

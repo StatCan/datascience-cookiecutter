@@ -7,7 +7,7 @@ The repository structure is made up of the following components:
     :maxdepth: 2
 
     docs
-    {{ cookiecutter.repo_name }}
+    cookiecutter.repo_name
 
 Top-level files
 ---------------
