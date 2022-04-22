@@ -29,6 +29,7 @@ messages:
 
 # Compile the Sphinx documentation in HTML format from a clean build
 docs: prepare_docs_folder requirements
+	cp ./docs/_splashpage/index.html "${DOCS_BUILDDIR}/index.html"
 	sphinx-build -b html ./docs "$(DOCS_BUILDDIR_EN)"
 	sphinx-build -b html ./docs "$(DOCS_BUILDDIR_FR)" -D language=fr
 
