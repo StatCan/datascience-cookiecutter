@@ -30,6 +30,7 @@ extensions = [
     "sphinx.ext.autosummary",
     "sphinx.ext.napoleon",
     "myst_parser",
+    "sphinx.ext.todo",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -199,3 +200,8 @@ myst_enable_extensions = [
     "smartquotes",
     "substitution",
 ]
+
+# -- Optional for todo -----------------------------------------------------------------
+
+# Show TODOs in the output
+todo_include_todos = True
