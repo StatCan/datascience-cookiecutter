@@ -8,8 +8,7 @@ BUILDDIR      = ./docs/_build
 
 # Install the Python requirements, and install pre-commit hooks
 requirements:
-	python -m pip install -U pip setuptools
-	python -m pip install -r requirements.txt
+	conda env update --file environment.yml
 	pre-commit install
 
 # Create the `docs/_build` folder or delete its contents

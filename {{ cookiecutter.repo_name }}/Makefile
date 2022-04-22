@@ -4,6 +4,7 @@
 	messages
 	prepare_docs_folder
 	requirements
+	test
 
 # Supported CLI arguments
 DOCS_SOURCEDIR	   = ./docs
@@ -13,8 +14,7 @@ DOCS_BUILDDIR_FR   = "$(DOCS_BUILDDIR)/fr"
 
 # Install the Python requirements, and install pre-commit hooks
 requirements:
-	python -m pip install -U pip setuptools
-	python -m pip install -r requirements.txt
+	conda env update --file environment.yml
 	pre-commit install
 
 # Create the `docs/_build` folder or delete its contents
@@ -35,3 +35,7 @@ docs: prepare_docs_folder requirements
 # Run code coverage
 coverage: requirements
 	coverage run -m pytest
+
+# Run all the tests
+test: requirements
+	pytest tests/
