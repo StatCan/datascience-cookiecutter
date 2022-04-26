@@ -14,7 +14,7 @@ DOCS_BUILDDIR_FR   = "$(DOCS_BUILDDIR)/fr"
 
 # Install the Python requirements
 requirements: .git/hooks/pre-commit
-	conda env update --file environment.yml
+	conda env update --prune --file environment.yml
 
 # Install pre-commit hooks
 .git/hooks/pre-commit:
