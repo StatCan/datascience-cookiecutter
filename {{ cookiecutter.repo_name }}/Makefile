@@ -12,9 +12,12 @@ DOCS_BUILDDIR      = ./docs/_build
 DOCS_BUILDDIR_EN   = "$(DOCS_BUILDDIR)/en"
 DOCS_BUILDDIR_FR   = "$(DOCS_BUILDDIR)/fr"
 
-# Install the Python requirements, and install pre-commit hooks
-requirements:
+# Install the Python requirements
+requirements: .git/hooks/pre-commit
 	conda env update --file environment.yml
+
+# Install pre-commit hooks
+.git/hooks/pre-commit:
 	pre-commit install
 
 # Create the `docs/_build` folder or delete its contents
