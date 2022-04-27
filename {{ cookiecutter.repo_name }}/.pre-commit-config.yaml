@@ -61,6 +61,16 @@ repos:
         name: detect-secrets - Detect secrets in staged code
         args: [ "--baseline", ".secrets.baseline" ]
         exclude: .*/tests/.*|^\.cruft\.json$
+  - repo: local
+    hooks:
+      - id: pytest-check
+        name: pytest-check
+        entry: pytest src
+        language: system
+        pass_filenames: false
+        always_run: true
+        args: ['-v']
+        stages: [push]
 {% if cookiecutter.using_R == "Yes" %}
   # R specific hooks: https://github.com/lorenzwalthert/precommit
   - repo: https://github.com/lorenzwalthert/precommit
