@@ -29,8 +29,13 @@ extensions = [
     "sphinx.ext.autosectionlabel",
     "sphinx.ext.autosummary",
     "sphinx.ext.napoleon",
+    "autoapi.extension",
     "myst_parser",
 ]
+# Add AutoAPI code type and path to scr folder. 
+# NOTE: autoapi_type should be set from the cookiecutter question (TODO)
+autoapi_type= 'python'
+autoapi_dirs=['../src']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
