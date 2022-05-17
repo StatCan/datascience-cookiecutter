@@ -5,6 +5,7 @@
 	prepare_docs_folder
 	requirements
 	test
+	wiki
 
 # Supported CLI arguments
 DOCS_SOURCEDIR	   = ./docs
@@ -40,7 +41,6 @@ messages:
 	sphinx-intl update -p _build/gettext -l fr
 
 # Clones project's WIKI and replaces absolutes URLs for relatives
-# NOTE: I will also mv README.md ./docs/usage/index.md
 wiki:
 	git clone $(WIKI) 
 	rm -rf $(WIKIDIR); mv $(PROJECT).wiki $(WIKIDIR)
