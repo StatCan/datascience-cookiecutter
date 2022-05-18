@@ -29,6 +29,7 @@ extensions = [
     "sphinx.ext.autosectionlabel",
     "sphinx.ext.autosummary",
     "sphinx.ext.napoleon",
+    "autoapi.extension",
     "myst_parser",
     "sphinx.ext.todo",
 ]
@@ -62,6 +63,10 @@ release = "{{ cookiecutter.project_version }}"
 # ignore when looking for source files. These patterns also affect html_static_path and
 # html_extra_path
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "README.md"]
+
+# Internationalization support
+locale_dirs = ['locale/']
+gettext_compact = False
 
 # -- Options for HTML output -----------------------------------------------------------
 
@@ -205,3 +210,11 @@ myst_enable_extensions = [
 
 # Show TODOs in the output
 todo_include_todos = True
+
+# -- Options for autoapi ---------------------------------------------------------------
+
+# Set the source code language to generage API docs for (defaults to Python)
+# autoapi_type= 'python'
+
+# Where to look for source code
+autoapi_dirs=['../src']
