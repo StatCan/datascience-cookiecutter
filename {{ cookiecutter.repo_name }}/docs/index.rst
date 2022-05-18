@@ -14,6 +14,7 @@
    methodology/index
    decisions/index
    reference/index
+   wiki/Home
 
 
 Indices and tables

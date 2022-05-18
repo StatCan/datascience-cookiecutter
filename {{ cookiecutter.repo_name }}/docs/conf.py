@@ -29,6 +29,7 @@ extensions = [
     "sphinx.ext.autosectionlabel",
     "sphinx.ext.autosummary",
     "sphinx.ext.napoleon",
+    "autoapi.extension",
     "myst_parser",
 ]
 
@@ -203,3 +204,11 @@ myst_enable_extensions = [
     "smartquotes",
     "substitution",
 ]
+
+# -- Options for autoapi ---------------------------------------------------------------
+
+# Set the source code language to generage API docs for (defaults to Python)
+# autoapi_type= 'python'
+
+# Where to look for source code
+autoapi_dirs=['../src']
