@@ -32,10 +32,6 @@ extensions = [
     "autoapi.extension",
     "myst_parser",
 ]
-# Add AutoAPI code type and path to scr folder. 
-# NOTE: autoapi_type should be set from the cookiecutter question (TODO)
-autoapi_type= 'python'
-autoapi_dirs=['../src']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -208,3 +204,11 @@ myst_enable_extensions = [
     "smartquotes",
     "substitution",
 ]
+
+# -- Options for autoapi ---------------------------------------------------------------
+
+# Set the source code language to generage API docs for (defaults to Python)
+# autoapi_type= 'python'
+
+# Where to look for source code
+autoapi_dirs=['../src']
