@@ -24,8 +24,6 @@ Un gabarit ``cookiecutter`` pour les projets de science des données à Statisti
 
 Ce modèle aide à mettre en place un projet standardisé et comprend des fonctions de sécurité utilisant des crochets de pré-commit.
 
-Traduit avec www.DeepL.com/Translator (version gratuite)
-
 ### Comment contribuer
 
 Voir [CONTRIBUTING.md](CONTRIBUTING.md)
