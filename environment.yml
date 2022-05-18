@@ -1,10 +1,10 @@
-name: {{ cookiecutter.repo_name }}
 channels:
   - defaults
 dependencies:
   - pip
   - sphinx
   - sphinx-intl
+  - sphinx_rtd_theme
   - pre-commit
   - pytest
   - myst-parser
