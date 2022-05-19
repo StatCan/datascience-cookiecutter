@@ -1,0 +1,13 @@
+name: sphinx-doc
+channels:
+  - defaults
+dependencies:
+  - pip
+  - sphinx
+  - sphinx-autoapi
+  - sphinx-intl
+  - sphinx_rtd_theme
+  - pre-commit
+  - pytest
+  - myst-parser
+  - coverage
