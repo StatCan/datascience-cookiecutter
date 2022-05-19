@@ -1,0 +1,14 @@
+name: docs
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - pip
+  - sphinx
+  - sphinx_rtd_theme
+  - pytest
+  - coverage
+  - sphinx-intl
+  - sphinx-autoapi
+  - myst-parser
+  - pre-commit
