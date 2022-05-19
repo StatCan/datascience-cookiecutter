@@ -1,13 +1,14 @@
 name: sphinx-doc
 channels:
   - defaults
+  - conda-forge
 dependencies:
   - pip
   - sphinx
-  - sphinx-autoapi
-  - sphinx-intl
   - sphinx_rtd_theme
-  - pre-commit
   - pytest
-  - myst-parser
   - coverage
+  - sphinx-intl
+  - sphinx-autoapi
+  - myst-parser
+  - pre-commit
