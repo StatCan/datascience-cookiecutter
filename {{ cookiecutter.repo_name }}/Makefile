@@ -63,4 +63,4 @@ coverage: requirements
 
 # Run all the tests
 test: requirements
-	cd src/; pytest ../tests/ -s -v 
+	pytest tests/ -s -v 
