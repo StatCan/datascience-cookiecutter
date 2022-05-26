@@ -1,7 +1,7 @@
-name: docs
+name: {{ cookiecutter.repo_name }}-docs
 channels:
-  - defaults
-  - conda-forge
+   - defaults
+   - conda-forge
 dependencies:
   - pip
   - sphinx
@@ -12,3 +12,9 @@ dependencies:
   - sphinx-autoapi
   - myst-parser
   - pre-commit
+  - cruft
+  - flake8
+  - black
+  - autoflake
+  - pre-commit
+
