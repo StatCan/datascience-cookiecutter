@@ -25,7 +25,7 @@ docs: prepare_docs_folder requirements
 # Extract translatable messages in docs
 docs_messages: prepare_docs_folder
 	sphinx-build -M gettext ./docs/ ./docs/_build
-	sphinx-intl update -p ./docs/_build/gettext -l fr
+	cd docs; sphinx-intl update -p _build/gettext -l fr
 
 # Run code coverage
 coverage: requirements
