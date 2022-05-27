@@ -28,12 +28,17 @@ repos:
         types: [ cython, pyi, python ]
         args: [ "--profile", "black", "--filter-files" ]
   # Unclear if black is going to be used.
-  # - repo: https://github.com/psf/black
-  #   rev: 21.5b2 # Replace by any tag/version: https://github.com/psf/black/tags
-  #   hooks:
-  #     - id: black
-  #       name: black - consistent Python code formatting (auto-fixes)
-  #       language_version: python # Should be a command that runs python3.6+
+  - repo: https://github.com/psf/black
+    rev: 22.3.0 # Replace by any tag/version: https://github.com/psf/black/tags
+    hooks:
+      - id: black
+        name: black - consistent Python code formatting (auto-fixes)
+        language_version: python # Should be a command that runs python3.6+
+  - repo: https://github.com/myint/autoflake
+    rev: v1.4
+    hooks:
+      - id: autoflake
+        args: ['--in-place', '--remove-all-unused-imports', '--ignore-init-module-imports']
   - repo: https://gitlab.com/pycqa/flake8
     rev: 3.9.2
     hooks:
