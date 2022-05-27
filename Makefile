@@ -2,6 +2,7 @@
 	coverage
 	docs
 	prepare_docs_folder
+	requirements
 
 # Supported CLI arguments
 BUILDDIR      = ./docs/_build
