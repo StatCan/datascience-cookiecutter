@@ -1,0 +1,20 @@
+name: {{ cookiecutter.repo_name }}-docs
+channels:
+   - defaults
+   - conda-forge
+dependencies:
+  - pip
+  - sphinx
+  - sphinx_rtd_theme
+  - pytest
+  - coverage
+  - sphinx-intl
+  - sphinx-autoapi
+  - myst-parser
+  - pre-commit
+  - cruft
+  - flake8
+  - black
+  - autoflake
+  - pre-commit
+
