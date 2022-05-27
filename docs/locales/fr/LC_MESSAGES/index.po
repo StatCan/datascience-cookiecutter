@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Data Science Cookiecutter \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-27 08:26-0400\n"
+"POT-Creation-Date: 2022-05-27 08:34-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Reginald Maltais <reginald.maltais@statcan.gc.ca>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -23,8 +23,8 @@ msgid "Contents:"
 msgstr ""
 
 #: ../../index.rst:2
-msgid "Data Science Cookiecutter documentation!"
-msgstr ""
+msgid "StatCan Data Science Cookiecutter"
+msgstr "Cookiecutter pour les projets de science des données à StatCan"
 
 #: ../../index.rst:4
 msgid ""
@@ -33,12 +33,18 @@ msgid ""
 "up tasks associated with starting data science projects at Statistics "
 "Canada."
 msgstr ""
+"Un gabarit ``cookiecutter`` pour les projets de science des données à "
+"Statistique Canada et dans le secteur public en général. L'objectif est "
+"de réduire le nombre de tâches de mise en place associées au démarrage de"
+" projets de science des données à Statistique Canada."
 
 #: ../../index.rst:8
 msgid ""
 "This template helps to set up standardized project, and includes security"
 " features using pre-commit hooks."
 msgstr ""
+"Ce modèle aide à mettre en place un projet standardisé et comprend des "
+"fonctions de sécurité utilisant des crochets de pré-commit."
 
 #: ../../index.rst:19
 msgid "Indices and tables"
