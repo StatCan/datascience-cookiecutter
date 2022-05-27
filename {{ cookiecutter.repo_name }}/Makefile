@@ -38,7 +38,7 @@ prepare_docs_folder:
 # Extract translatable messages for translation
 messages:
 	sphinx-build -M gettext "$(DOCS_SOURCEDIR)"
-	sphinx-intl update -p _build/gettext -l fr
+	cd "$(DOCS_SOURCEDIR)"; sphinx-intl update -p _build/gettext -l fr
 
 # Clones project's WIKI and replaces absolutes URLs for relatives
 wiki:
