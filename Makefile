@@ -1,6 +1,7 @@
 .PHONY:
 	coverage
 	docs
+	docs_messages
 	prepare_docs_folder
 	requirements
 
@@ -20,6 +21,11 @@ prepare_docs_folder:
 # Compile the Sphinx documentation in HTML format from a clean build
 docs: prepare_docs_folder requirements
 	sphinx-build -b html ./docs "${BUILDDIR}"
+
+# Extract translatable messages in docs
+docs_messages: prepare_docs_folder
+	sphinx-build -M gettext ./docs/ ./docs/_build
+	sphinx-intl update -p ./docs/_build/gettext -l fr
 
 # Run code coverage
 coverage: requirements
