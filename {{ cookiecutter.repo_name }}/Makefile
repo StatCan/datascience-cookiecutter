@@ -33,7 +33,7 @@ requirements: .git/hooks/pre-commit
 # Create the `docs/_build` folder or delete its contents
 prepare_docs_folder:
 	if [ ! -d "$(DOCS_BUILDDIR)" ]; then mkdir "$(DOCS_BUILDDIR)"; fi
-	find "$(DOCS_BUILDDIR)" -mindepth 1 -maxdepth 1 -type d -exec rm -rf () \;
+	find "$(DOCS_BUILDDIR)" -mindepth 1 -maxdepth 1 -type d -exec rm -rf {} \;
 
 # Extract translatable messages for translation
 messages:
