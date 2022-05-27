@@ -52,15 +52,42 @@
 			<!-- Write closure template -->
 			<script>
 				var contentSplash = document.getElementById("splashContent");
-				contentSplash.innerHTML = wet.builder.splash({
-                    "cdnEnv": "prod",
-					"indexEng": "en/index.html",
-					"indexFra": "fr/index.html",
-					"termsEng": "https://intranet.canada.ca/terms-avis-eng.asp",
-					"termsFra": "https://intranet.canada.ca/terms-avis-fra.asp",
-					"nameEng": "{{ cookiecutter.project_name_en }}",
-					"nameFra": "{{ cookiecutter.project_name_fr }}"
-				});
+				if (typeof wet === "undefined") {
+					var html = `
+						<style>
+							div#splash {
+								width: 400px;
+								height: 200px;
+								position: fixed;
+								top: 50%;
+								left: 50%;
+								margin-top: -100px;
+								margin-left: -200px;
+								text-align:center;
+							}
+							div#splash a {
+								padding: 20px;
+							}
+						</style>
+						<div id='splash'>
+							<a  href='en/index.html'> English </a> 
+							<a  href='fr/index.html'> French  </a>
+						</div>
+					`;
+					contentSplash.innerHTML += html;
+				}
+				else {
+					contentSplash.innerHTML = wet.builder.splash({
+						"cdnEnv": "prod",
+						"indexEng": "en/index.html",
+						"indexFra": "fr/index.html",
+						"termsEng": "https://intranet.canada.ca/terms-avis-eng.asp",
+						"termsFra": "https://intranet.canada.ca/terms-avis-fra.asp",
+						"nameEng": "hydra-module-template",
+						"nameFra": "hydra-module-template"
+					});
+				}
+				
 			</script>
 		</div>
 	</body>
