@@ -4,6 +4,6 @@
     "organisation": "StatCan",
     "repo_name": "{{ cookiecutter.project_name_en.lower().replace(' ', '-') }}",
     "project_version": "0.0.1",
-
+    "package_name": "{{ cookiecutter.repo_name.replace('-', '_') }}",
     "using_R": ["No", "Yes"]
 }

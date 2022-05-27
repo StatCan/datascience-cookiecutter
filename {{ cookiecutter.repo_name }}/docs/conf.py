@@ -14,6 +14,7 @@
 
 import os
 import sys
+import {{ cookiecutter.package_name }}
 
 sys.path.insert(0, os.path.abspath(".."))
 
@@ -55,9 +56,9 @@ author = "{{ cookiecutter.organisation }}"
 # |version| and |release|, also used in various other places throughout the built
 # documents.
 # The short X.Y.Z version.
-version = "{{ cookiecutter.project_version }}"
+version = {{ cookiecutter.package_name }}.__version__
 # The full version, including alpha/beta/rc tags.
-release = "{{ cookiecutter.project_version }}"
+release = {{ cookiecutter.package_name }}.__version__
 
 # List of patterns, relative to source directory, that match files and directories to
 # ignore when looking for source files. These patterns also affect html_static_path and
