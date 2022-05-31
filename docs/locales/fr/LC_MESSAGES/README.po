@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../README.md:1
 msgid "`docs` folder overview"
-msgstr ""
+msgstr "présentation du dossier `docs`"
 
 #: ../../README.md:3
 msgid ""
@@ -28,6 +28,9 @@ msgid ""
 "acceptable formatting for Sphinx. Support for both reStructuredText and "
 "Markdown is available."
 msgstr ""
+"Toute la documentation du projet doit être incluse dans ce dossier avec un "
+"format acceptable pour Sphinx. La prise en charge de reStructuredText et de "
+"Markdown est disponible."
 
 #: ../../README.md:7
 msgid ""
@@ -35,12 +38,14 @@ msgid ""
 " folder without duplicating it, include it in the docs/{{ "
 "cookiecutter.repo_name }} folder."
 msgstr ""
+"Si vous voulez de la documentation écrite dans le {{ cookiecutter.repo_name }} "
+"dossier sans le dupliquer, incluez-le dans la dossier docs/{{ cookiecutter.repo_name }}."
 
 #: ../../README.md:10
 msgid "To build the documentation locally run"
-msgstr ""
+msgstr "Pour construire la documentation exécutée localement"
 
 #: ../../README.md:16
 msgid "The HTML outputs will be available at `docs/_build/index.html`."
-msgstr ""
+msgstr "Les résultats HTML seront disponibles a `docs/_build/index.html`."
 

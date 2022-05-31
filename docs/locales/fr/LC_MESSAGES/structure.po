@@ -20,39 +20,43 @@ msgstr ""
 
 #: ../../structure/cookiecutter.repo_name.rst:2
 msgid "``{{ cookiecutter.repo_name }}`` repository structure"
-msgstr ""
+msgstr "structure du référentiel ``{{ cookiecutter.repo_name }}``"
 
 #: ../../structure/cookiecutter.repo_name.rst:4
 msgid ""
 "Information on the structure of the template folder can be found at "
 ":file:`{{ cookiecutter.repo_name }}/docs/structure/index.rst`."
 msgstr ""
+"Vous trouverez des informations sur la structure du dossier de modèles à l'adresse "
+":file:`{{ cookiecutter.repo_name }}/docs/structure/index.rst`."
 
 #: ../../structure/docs.rst:2
 msgid "``docs`` folder"
-msgstr ""
+msgstr "dossier ``docs``"
 
 #: ../../structure/docs.rst:4
 msgid "Holds this project documentation."
-msgstr ""
+msgstr "Contient la documentation du projet."
 
 #: ../../structure/index.rst:2
 msgid "``datascience-cookiecutter`` structure"
-msgstr ""
+msgstr "structure du ``datascience-cookiecutter``"
 
 #: ../../structure/index.rst:4
 msgid "The repository structure is made up of the following components:"
-msgstr ""
+msgstr "La structure du dépôt est composée des composants suivants :"
 
 #: ../../structure/index.rst:13
 msgid "Top-level files"
-msgstr ""
+msgstr "Fichiers de niveau supérieur"
 
 #: ../../structure/index.rst:15
 msgid ""
 "In addition to the folders idenfied above, the following files are also "
 "used."
 msgstr ""
+"En plus des dossiers idenfiés ci-dessus, les fichiers suivants sont également "
+"utilisé."
 
 #: ../../structure/index.rst:18
 msgid "``.secrets.baseline``"
@@ -65,6 +69,10 @@ msgid ""
 "to the repository. The baseline file flags secret-like data that the user"
 " deliberatly wants to allow to commit to the repository."
 msgstr ""
+"Cela fournit une base pour `detect-secrets`_. Lorsqu'il est associé à ``pre-commit``, "
+"``detect-secrets`` aide à empêcher la validation des secrets au référentiel. "
+"Le fichier de référence signale les données de type secret que l'utilisateur "
+"veut délibérément autoriser à s'engager dans le référentiel."
 
 #: ../../structure/index.rst:26
 msgid "``cookiecutter.json``"
@@ -76,10 +84,13 @@ msgid ""
 "and default values during template generation. Any keys in the file that "
 "begin with an underscore are not shown to users."
 msgstr ""
+"Un fichier :abbr:`JSON (JavaScript Object Notation)` contenant les invites "
+"et les valeurs par défaut lors de la génération du modèle. Toutes les clés du fichier qui "
+"commencez par un trait de soulignement ne sont pas affichés pour les utilisateurs."
 
 #: ../../structure/index.rst:32
 msgid "For more information, see the `cookiecutter`_ package documentation."
-msgstr ""
+msgstr "Pour plus d'informations, consultez la documentation du package `cookiecutter`_."
 
 #: ../../structure/index.rst:35
 msgid "``README.md``"
@@ -90,4 +101,5 @@ msgid ""
 "An overview of the repository with a brief description of its purpose to "
 "inform people what the project."
 msgstr ""
-
+"Un aperçu du dépôt avec une brève description de son objectif d'informer "
+"les gens de ce que le projet."
