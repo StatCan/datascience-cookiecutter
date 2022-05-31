@@ -34,61 +34,67 @@
 		-->
 		<script src="https://ssl-templates.services.gc.ca/rn/cls/WET/gcintranet/cdts/compiled//compiled/soyutils.js"></script>
 		<script src="https://ssl-templates.services.gc.ca/rn/cls/WET/gcintranet/cdts/compiled//compiled/wet-en.js"></script>
+		<style>
+			div#no_cdn {
+				width: 400px;
+				height: 200px;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				margin-top: -100px;
+				margin-left: -200px;
+				text-align:center;
+			}
+			div#no_cdn a {
+				padding: 20px;
+			}
+		</style>
 		<noscript>
 			<!-- Write closure fall-back static file -->
 			<!-- splashTop.html -->
+			<div id='no_cdn'>
+				<a  href='en/index.html'> English </a>
+				<a  href='fr/index.html'> French  </a>
+			</div>
 		</noscript>
 		<!-- Write closure template -->
 		<script>
-			document.write(wet.builder.splashTop({
-				"cdnEnv": "prod"
-			}));
-		</script>
-	</head>
-	<body class="splash" vocab="https://schema.org/" typeof="WebPage">
-		<div id="splashContent">
-			<!-- Write closure fall-back static file -->
-			<!-- splash.html -->
-			<!-- Write closure template -->
-			<script>
+
+			function splash(){
+			
 				var contentSplash = document.getElementById("splashContent");
 				if (typeof wet === "undefined") {
 					var html = `
-						<style>
-							div#splash {
-								width: 400px;
-								height: 200px;
-								position: fixed;
-								top: 50%;
-								left: 50%;
-								margin-top: -100px;
-								margin-left: -200px;
-								text-align:center;
-							}
-							div#splash a {
-								padding: 20px;
-							}
-						</style>
-						<div id='splash'>
-							<a  href='en/index.html'> English </a> 
+						<div id='no_cdn'>
+							<a  href='en/index.html'> English </a>
 							<a  href='fr/index.html'> French  </a>
 						</div>
 					`;
 					contentSplash.innerHTML += html;
 				}
 				else {
+					document.write(wet.builder.splashTop({
+						"cdnEnv": "prod"
+					}));
 					contentSplash.innerHTML = wet.builder.splash({
 						"cdnEnv": "prod",
 						"indexEng": "en/index.html",
 						"indexFra": "fr/index.html",
 						"termsEng": "https://intranet.canada.ca/terms-avis-eng.asp",
 						"termsFra": "https://intranet.canada.ca/terms-avis-fra.asp",
-						"nameEng": "hydra-module-template",
-						"nameFra": "hydra-module-template"
+						"nameEng": "{{ cookiecutter.project_name_en }}",
+						"nameFra": "{{ cookiecutter.project_name_fr }}"
 					});
 				}
-				
-			</script>
+			}
+		</script>
+	</head>
+	<body class="splash" vocab="https://schema.org/" typeof="WebPage" onload="splash()">
+		<div id="splashContent">
+			<!-- Write closure fall-back static file -->
+			<!-- splash.html -->
+			<!-- Write closure template -->
 		</div>
+		  
 	</body>
 </html>
