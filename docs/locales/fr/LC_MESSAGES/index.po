@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, Data Science Division, Statistics Canada
+# This file is distributed under the same license as the Data Science
+# Cookiecutter package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Data Science Cookiecutter \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-27 08:34-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Reginald Maltais <reginald.maltais@statcan.gc.ca>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../index.rst:11
+msgid "Contents:"
+msgstr ""
+
+#: ../../index.rst:2
+msgid "StatCan Data Science Cookiecutter"
+msgstr "Cookiecutter pour les projets de science des données à StatCan"
+
+#: ../../index.rst:4
+msgid ""
+"A ``cookiecutter`` template for data science projects within Statistics "
+"Canada and wider public sector. The goal is to reduce the amount of set "
+"up tasks associated with starting data science projects at Statistics "
+"Canada."
+msgstr ""
+"Un gabarit ``cookiecutter`` pour les projets de science des données à "
+"Statistique Canada et dans le secteur public en général. L'objectif est "
+"de réduire le nombre de tâches de mise en place associées au démarrage de"
+" projets de science des données à Statistique Canada."
+
+#: ../../index.rst:8
+msgid ""
+"This template helps to set up standardized project, and includes security"
+" features using pre-commit hooks."
+msgstr ""
+"Ce modèle aide à mettre en place un projet standardisé et comprend des "
+"fonctions de sécurité utilisant des crochets de pré-commit."
+
+#: ../../index.rst:19
+msgid "Indices and tables"
+msgstr ""
+
+#: ../../index.rst:21
+msgid ":ref:`genindex`"
+msgstr ""
+
+#: ../../index.rst:22
+msgid ":ref:`modindex`"
+msgstr ""
+
+#: ../../index.rst:23
+msgid ":ref:`search`"
+msgstr ""
+

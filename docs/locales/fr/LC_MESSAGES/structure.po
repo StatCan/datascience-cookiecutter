@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, Data Science Division, Statistics Canada
+# This file is distributed under the same license as the Data Science
+# Cookiecutter package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Data Science Cookiecutter \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-27 08:26-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../structure/cookiecutter.repo_name.rst:2
+msgid "``{{ cookiecutter.repo_name }}`` repository structure"
+msgstr "structure du référentiel ``{{ cookiecutter.repo_name }}``"
+
+#: ../../structure/cookiecutter.repo_name.rst:4
+msgid ""
+"Information on the structure of the template folder can be found at "
+":file:`{{ cookiecutter.repo_name }}/docs/structure/index.rst`."
+msgstr ""
+"Vous trouverez des informations sur la structure du dossier de modèles à l'adresse "
+":file:`{{ cookiecutter.repo_name }}/docs/structure/index.rst`."
+
+#: ../../structure/docs.rst:2
+msgid "``docs`` folder"
+msgstr "dossier ``docs``"
+
+#: ../../structure/docs.rst:4
+msgid "Holds this project documentation."
+msgstr "Contient la documentation du projet."
+
+#: ../../structure/index.rst:2
+msgid "``datascience-cookiecutter`` structure"
+msgstr "structure du ``datascience-cookiecutter``"
+
+#: ../../structure/index.rst:4
+msgid "The repository structure is made up of the following components:"
+msgstr "La structure du dépôt est composée des composants suivants :"
+
+#: ../../structure/index.rst:13
+msgid "Top-level files"
+msgstr "Fichiers de niveau supérieur"
+
+#: ../../structure/index.rst:15
+msgid ""
+"In addition to the folders idenfied above, the following files are also "
+"used."
+msgstr ""
+"En plus des dossiers idenfiés ci-dessus, les fichiers suivants sont également "
+"utilisé."
+
+#: ../../structure/index.rst:18
+msgid "``.secrets.baseline``"
+msgstr ""
+
+#: ../../structure/index.rst:20
+msgid ""
+"This provides a baseline for `detect-secrets`_. When paired with ``pre-"
+"commit``, ``detect-secrets`` helps prevent secrets from being committed "
+"to the repository. The baseline file flags secret-like data that the user"
+" deliberatly wants to allow to commit to the repository."
+msgstr ""
+"Cela fournit une base pour `detect-secrets`_. Lorsqu'il est associé à ``pre-commit``, "
+"``detect-secrets`` aide à empêcher la validation des secrets au référentiel. "
+"Le fichier de référence signale les données de type secret que l'utilisateur "
+"veut délibérément autoriser à s'engager dans le référentiel."
+
+#: ../../structure/index.rst:26
+msgid "``cookiecutter.json``"
+msgstr ""
+
+#: ../../structure/index.rst:28
+msgid ""
+"A :abbr:`JSON (JavaScript Object Notation)` file containing the prompts "
+"and default values during template generation. Any keys in the file that "
+"begin with an underscore are not shown to users."
+msgstr ""
+"Un fichier :abbr:`JSON (JavaScript Object Notation)` contenant les invites "
+"et les valeurs par défaut lors de la génération du modèle. Toutes les clés du fichier qui "
+"commencez par un trait de soulignement ne sont pas affichés pour les utilisateurs."
+
+#: ../../structure/index.rst:32
+msgid "For more information, see the `cookiecutter`_ package documentation."
+msgstr "Pour plus d'informations, consultez la documentation du package `cookiecutter`_."
+
+#: ../../structure/index.rst:35
+msgid "``README.md``"
+msgstr ""
+
+#: ../../structure/index.rst:37
+msgid ""
+"An overview of the repository with a brief description of its purpose to "
+"inform people what the project."
+msgstr ""
+"Un aperçu du dépôt avec une brève description de son objectif d'informer "
+"les gens de ce que le projet."
