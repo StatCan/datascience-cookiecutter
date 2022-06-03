@@ -32,8 +32,8 @@
 			ssl-templates.services.gc.ca: https://ssl-templates.services.gc.ca/rn/cls/WET/gcintranet/cdts/compiled/[file name]
 			templates.service.gc.ca: https://templates.service.gc.ca/rn/cls/WET/gcintranet/cdts/compiled/[file name]
 		-->
-		<script src="https://ssl-templates.services.gc.ca/rn/cls/WET/gcintranet/cdts/compiled//compiled/soyutils.js"></script>
-		<script src="https://ssl-templates.services.gc.ca/rn/cls/WET/gcintranet/cdts/compiled//compiled/wet-en.js"></script>
+		<script src="https://ssl-templates.services.gc.ca/rn/cls/WET/gcintranet/cdts/compiled/soyutils.js"></script>
+		<script src="https://ssl-templates.services.gc.ca/rn/cls/WET/gcintranet/cdts/compiled/wet-en.js"></script>
 		<style>
 			div#no_cdn {
 				width: 400px;
@@ -59,6 +59,11 @@
 		</noscript>
 		<!-- Write closure template -->
 		<script>
+			
+			if (typeof wet !== "undefined")
+				document.write(wet.builder.splashTop({
+							"cdnEnv": "prod"
+				}));
 
 			function splash(){
 			
@@ -73,9 +78,7 @@
 					contentSplash.innerHTML += html;
 				}
 				else {
-					document.write(wet.builder.splashTop({
-						"cdnEnv": "prod"
-					}));
+					
 					contentSplash.innerHTML = wet.builder.splash({
 						"cdnEnv": "prod",
 						"indexEng": "en/index.html",
