@@ -32,36 +32,72 @@
 			ssl-templates.services.gc.ca: https://ssl-templates.services.gc.ca/rn/cls/WET/gcintranet/cdts/compiled/[file name]
 			templates.service.gc.ca: https://templates.service.gc.ca/rn/cls/WET/gcintranet/cdts/compiled/[file name]
 		-->
-		<script src="https://ssl-templates.services.gc.ca/rn/cls/WET/gcintranet/cdts/compiled//compiled/soyutils.js"></script>
-		<script src="https://ssl-templates.services.gc.ca/rn/cls/WET/gcintranet/cdts/compiled//compiled/wet-en.js"></script>
+		<script src="https://ssl-templates.services.gc.ca/rn/cls/WET/gcintranet/cdts/compiled/soyutils.js"></script>
+		<script src="https://ssl-templates.services.gc.ca/rn/cls/WET/gcintranet/cdts/compiled/wet-en.js"></script>
+		<style>
+			div#no_cdn {
+				width: 400px;
+				height: 200px;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				margin-top: -100px;
+				margin-left: -200px;
+				text-align:center;
+			}
+			div#no_cdn a {
+				padding: 20px;
+			}
+		</style>
 		<noscript>
 			<!-- Write closure fall-back static file -->
 			<!-- splashTop.html -->
+			<div id='no_cdn'>
+				<a  href='en/index.html'> English </a>
+				<a  href='fr/index.html'> French  </a>
+			</div>
 		</noscript>
 		<!-- Write closure template -->
 		<script>
-			document.write(wet.builder.splashTop({
-				"cdnEnv": "prod"
-			}));
+			
+			if (typeof wet !== "undefined")
+				document.write(wet.builder.splashTop({
+							"cdnEnv": "prod"
+				}));
+
+			function splash(){
+			
+				var contentSplash = document.getElementById("splashContent");
+				if (typeof wet === "undefined") {
+					var html = `
+						<div id='no_cdn'>
+							<a  href='en/index.html'> English </a>
+							<a  href='fr/index.html'> French  </a>
+						</div>
+					`;
+					contentSplash.innerHTML += html;
+				}
+				else {
+					
+					contentSplash.innerHTML = wet.builder.splash({
+						"cdnEnv": "prod",
+						"indexEng": "en/index.html",
+						"indexFra": "fr/index.html",
+						"termsEng": "https://intranet.canada.ca/terms-avis-eng.asp",
+						"termsFra": "https://intranet.canada.ca/terms-avis-fra.asp",
+						"nameEng": "{{ cookiecutter.project_name_en }}",
+						"nameFra": "{{ cookiecutter.project_name_fr }}"
+					});
+				}
+			}
 		</script>
 	</head>
-	<body class="splash" vocab="https://schema.org/" typeof="WebPage">
+	<body class="splash" vocab="https://schema.org/" typeof="WebPage" onload="splash()">
 		<div id="splashContent">
 			<!-- Write closure fall-back static file -->
 			<!-- splash.html -->
 			<!-- Write closure template -->
-			<script>
-				var contentSplash = document.getElementById("splashContent");
-				contentSplash.innerHTML = wet.builder.splash({
-                    "cdnEnv": "prod",
-					"indexEng": "en/index.html",
-					"indexFra": "fr/index.html",
-					"termsEng": "https://intranet.canada.ca/terms-avis-eng.asp",
-					"termsFra": "https://intranet.canada.ca/terms-avis-fra.asp",
-					"nameEng": "{{ cookiecutter.project_name_en }}",
-					"nameFra": "{{ cookiecutter.project_name_fr }}"
-				});
-			</script>
 		</div>
+		  
 	</body>
 </html>
