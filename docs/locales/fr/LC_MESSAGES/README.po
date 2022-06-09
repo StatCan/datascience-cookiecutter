@@ -1,0 +1,51 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, Data Science Division, Statistics Canada
+# This file is distributed under the same license as the Data Science
+# Cookiecutter package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Data Science Cookiecutter \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-27 08:26-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../README.md:1
+msgid "`docs` folder overview"
+msgstr "présentation du dossier `docs`"
+
+#: ../../README.md:3
+msgid ""
+"All documentation for the project should be included in this folder with "
+"acceptable formatting for Sphinx. Support for both reStructuredText and "
+"Markdown is available."
+msgstr ""
+"Toute la documentation du projet doit être incluse dans ce dossier avec un "
+"format acceptable pour Sphinx. La prise en charge de reStructuredText et de "
+"Markdown est disponible."
+
+#: ../../README.md:7
+msgid ""
+"If you want any documentation written in the {{ cookiecutter.repo_name }}"
+" folder without duplicating it, include it in the docs/{{ "
+"cookiecutter.repo_name }} folder."
+msgstr ""
+"Si vous voulez de la documentation écrite dans le {{ cookiecutter.repo_name }} "
+"dossier sans le dupliquer, incluez-le dans la dossier docs/{{ cookiecutter.repo_name }}."
+
+#: ../../README.md:10
+msgid "To build the documentation locally run"
+msgstr "Pour construire la documentation exécutée localement"
+
+#: ../../README.md:16
+msgid "The HTML outputs will be available at `docs/_build/index.html`."
+msgstr "Les résultats HTML seront disponibles a `docs/_build/index.html`."
+

@@ -1,6 +1,6 @@
 [(Français)](#le-nom-du-projet)
 
-## Data Science Cookiecuttter
+## StatCan Data Science Cookiecuttter
 
 A ``cookiecutter`` template for data science projects within Statistics Canada and wider public sector. The goal is to reduce the amount of set up tasks associated with starting data science projects at Statistics Canada.
 
@@ -18,7 +18,7 @@ The Canada wordmark and related graphics associated with this distribution are p
 
 ______________________
 
-## Le nom du projet
+## Cookiecutter pour les projets de science des données à StatCan
 
 Un gabarit ``cookiecutter`` pour les projets de science des données à Statistique Canada et dans le secteur public en général. L'objectif est de réduire le nombre de tâches de mise en place associées au démarrage de projets de science des données à Statistique Canada.
 
