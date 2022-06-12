@@ -81,6 +81,15 @@ Now that ``git`` is ready you can configure your development environment for the
     $ conda env create -f conda-envs/environment.<repo name>-docs.yml
     $ conda activate <repo name>
 
+Several git hooks have been pre-configured for you. ``pre-commit`` is used to make configuring
+them easy:
+
+.. code-block:: sh
+
+    $ pre-commit install
+
+Now the hooks will run autatically every time you run ``git commit``.
+
 The templates assume you're creating a package. The easiest way to work on your project
 is to install it into your environment as an editable install:
 
