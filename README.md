@@ -18,6 +18,12 @@ Unless otherwise noted, the source code of this project is covered under Crown C
 
 The Canada wordmark and related graphics associated with this distribution are protected under trademark law and copyright law. No permission is granted to use them outside the parameters of the Government of Canada's corporate identity program. For more information, see [Federal identity requirements](https://www.canada.ca/en/treasury-board-secretariat/topics/government-communications/federal-identity-requirements.html).
 
+### Acknowledgements
+
+This templates is inspired by the work of the [DrivenData cookiecutter data science project](http://drivendata.github.io/cookiecutter-data-science/),
+as well as the United Kingdom [govcookiecutter](https://github.com/best-practice-and-impact/govcookiecutter). Specifically, the `data` directory layout and `help` command in the 
+`Makefile`s.
+
 ______________________
 
 ## Cookiecutter pour les projets de science des données à StatCan
@@ -37,3 +43,8 @@ Voir [CONTRIBUTING.md](CONTRIBUTING.md)
 Sauf indication contraire, le code source de ce projet est protégé par le droit d'auteur de la Couronne du gouvernement du Canada et distribué sous la [licence MIT](LICENSE).
 
 Le mot-symbole « Canada » et les éléments graphiques connexes liés à cette distribution sont protégés en vertu des lois portant sur les marques de commerce et le droit d'auteur. Aucune autorisation n'est accordée pour leur utilisation à l'extérieur des paramètres du programme de coordination de l'image de marque du gouvernement du Canada. Pour obtenir davantage de renseignements à ce sujet, veuillez consulter les [Exigences pour l'image de marque](https://www.canada.ca/fr/secretariat-conseil-tresor/sujets/communications-gouvernementales/exigences-image-marque.html).
+
+### Remerciements
+
+Ce modèle s'inspire des travaux du [projet de science des données DrivenData cookiecutter](http://drivendata.github.io/cookiecutter-data-science/),
+ainsi que du projet britannique [govcookiecutter] (https://github.com/best-practice-and-impact/govcookiecutter). Plus précisément, la disposition du répertoire `data` et la commande `help` dans les fichiers `Makefile`s.
