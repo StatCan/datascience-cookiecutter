@@ -6,6 +6,8 @@ A ``cookiecutter`` template for data science projects within Statistics Canada a
 
 This template helps to set up standardized project, and includes security features using pre-commit hooks.
 
+See [usage](docs/usage.rst) to get started.
+
 ### How to Contribute
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
@@ -23,6 +25,8 @@ ______________________
 Un gabarit ``cookiecutter`` pour les projets de science des données à Statistique Canada et dans le secteur public en général. L'objectif est de réduire le nombre de tâches de mise en place associées au démarrage de projets de science des données à Statistique Canada.
 
 Ce modèle aide à mettre en place un projet standardisé et comprend des fonctions de sécurité utilisant des crochets de pré-commit.
+
+Voir [l'utilisation](docs/usage.rst) pour commencer.
 
 ### Comment contribuer
 
