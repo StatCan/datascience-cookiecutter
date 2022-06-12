@@ -12,6 +12,7 @@ DOCS_SOURCEDIR	   = ./docs
 DOCS_BUILDDIR      = ./docs/_build
 DOCS_BUILDDIR_EN   = "$(DOCS_BUILDDIR)/en"
 DOCS_BUILDDIR_FR   = "$(DOCS_BUILDDIR)/fr"
+DOCS_VERSION       = -D version=`cat version;` -D release=`cat version;`
 
 # Variables for automatically include projects wiki into doc
 WIKIDIR       = ./docs/wiki
@@ -54,8 +55,8 @@ wiki:
 # Compile the Sphinx documentation in HTML format from a clean build
 docs: prepare_docs_folder requirements
 	cp ./docs/_splashpage/index.html "${DOCS_BUILDDIR}/index.html"
-	sphinx-build -b html ./docs "$(DOCS_BUILDDIR_EN)"
-	sphinx-build -b html ./docs "$(DOCS_BUILDDIR_FR)" -D language=fr
+	sphinx-build ${DOCS_VERSION} -b html ./docs "$(DOCS_BUILDDIR_EN)"
+	sphinx-build ${DOCS_VERSION} -b html ./docs "$(DOCS_BUILDDIR_FR)" -D language=fr
 
 # Run code coverage
 coverage: requirements
@@ -63,4 +64,4 @@ coverage: requirements
 
 # Run all the tests
 test: requirements
-	pytest tests/
+	pytest tests/ -v -s

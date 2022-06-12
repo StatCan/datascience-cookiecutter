@@ -12,10 +12,10 @@
 # these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 
-import os
-import sys
+# import os
+# import sys
 
-sys.path.insert(0, os.path.abspath(".."))
+# sys.path.insert(0, os.path.abspath("../src"))
 
 # -- General configuration ------------------------------------------------
 
@@ -54,10 +54,12 @@ author = "{{ cookiecutter.organisation }}"
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the built
 # documents.
+# Note: You probably want to set the version information via ../version. Only change
+# this is you are trying to override the version in that file.
 # The short X.Y.Z version.
-version = "{{ cookiecutter.project_version }}"
+# version = "{{ cookiecutter.project_version }}"
 # The full version, including alpha/beta/rc tags.
-release = "{{ cookiecutter.project_version }}"
+# release = "{{ cookiecutter.project_version }}"
 
 # List of patterns, relative to source directory, that match files and directories to
 # ignore when looking for source files. These patterns also affect html_static_path and
