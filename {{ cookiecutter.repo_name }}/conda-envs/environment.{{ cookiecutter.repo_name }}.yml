@@ -1,4 +1,4 @@
-name: {{ cookiecutter.repo_name }}-docs
+name: {{ cookiecutter.repo_name }}
 channels:
    - defaults
    - conda-forge
@@ -17,4 +17,5 @@ dependencies:
   - black
   - autoflake
   - pre-commit
-
+  - build
+  - twine
