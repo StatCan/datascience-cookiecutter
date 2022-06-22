@@ -19,3 +19,6 @@ dependencies:
   - pre-commit
   - build
   - twine
+  - pip:
+    - crudini
+    - pip-chill

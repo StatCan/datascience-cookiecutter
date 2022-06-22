@@ -6,6 +6,7 @@
 	requirements
 	test
 	wiki
+	install_requires
 
 # Supported CLI arguments
 DOCS_SOURCEDIR	   = ./docs
@@ -50,6 +51,11 @@ wiki:
 	if [[ "$(WIKI)" == *"https://github.com"* ]]; then \
 		find $(WIKIDIR) -type f -name "*.md" -exec sed -i -e "s/$(GITHUB_URL)//g" {} \; ; \
 	fi
+
+# Create minimal install_requires from current env in setup.cfg
+install_requires:
+	crudini --set setup.cfg options install_requires " " 
+	pip-chill | sed 's/^/\t/' | sed -i -e '/install_requires =/r /dev/stdin' setup.cfg
 
 # Compile the Sphinx documentation in HTML format from a clean build
 docs: prepare_docs_folder requirements
