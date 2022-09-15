@@ -20,7 +20,7 @@ The Canada wordmark and related graphics associated with this distribution are p
 
 ### Acknowledgements
 
-This templates is inspired by the work of the [DrivenData cookiecutter data science project](http://drivendata.github.io/cookiecutter-data-science/),
+This template is inspired by the work of the [DrivenData cookiecutter data science project](http://drivendata.github.io/cookiecutter-data-science/),
 as well as the United Kingdom [govcookiecutter](https://github.com/best-practice-and-impact/govcookiecutter). Specifically, the `data` directory layout and `help` command in the 
 `Makefile`s.
 
