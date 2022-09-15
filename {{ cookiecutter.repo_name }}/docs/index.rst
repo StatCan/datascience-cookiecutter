@@ -16,6 +16,10 @@
    reference/index
    wiki/Home
 
+   .. API documentation will be generated automatically.
+   
+   autoapi/index
+
 
 Indices and tables
 ==================
