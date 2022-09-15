@@ -88,7 +88,7 @@ them easy:
 
     $ pre-commit install
 
-Now the hooks will run autatically every time you run ``git commit``.
+Now the hooks will run automatically every time you run ``git commit``.
 
 The templates assume you're creating a package. The easiest way to work on your project
 is to install it into your environment as an editable install:
