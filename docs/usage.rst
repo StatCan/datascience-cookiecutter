@@ -14,7 +14,7 @@ Required software
 ^^^^^^^^^^^^^^^^^
 
 This project is based on `cookiecutter`_, but we recommend `cruft`_ to help keep your
-project in sync as the templates evolve to provide additional usaful features.
+project in sync as the templates evolve to provide additional useful features.
 
 ``cruft`` can be installed through ``pip``::
 
