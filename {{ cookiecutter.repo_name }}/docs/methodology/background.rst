@@ -12,5 +12,6 @@ Identify relevant background information to the project.
   the precise use case for the proposed inference procedure within the context of
   its parent production process.
 * How will these inferential outcomes be used?
+
   * For example, within the context of the parent production process, what action
     will be taken, or decision made, based on the outcomes of the inference?
