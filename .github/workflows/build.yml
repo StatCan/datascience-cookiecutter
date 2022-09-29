@@ -17,9 +17,11 @@ jobs:
           python-version: ${{ matrix.python-version }}
       
       - name: Install dependencies
+        # Will look for a requirements.txt file and install those dependencies, if present.
         run: |
           python -m pip install --upgrade pip
           pip install pytest pytest-cookies sphinx myst-parser sphinx-rtd-theme sphinx-autoapi
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       
       - name: Run all tests
         run: |
