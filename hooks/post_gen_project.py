@@ -14,7 +14,7 @@ REMOVE_PATHS = [
     '{% if cookiecutter.using_R == "Yes" %} pyproject.toml {% endif %}',
     '{% if cookiecutter.using_R == "Yes" %} tests/test_api.py {% endif %}',
     '{% if cookiecutter.using_R == "Yes" %} tests/test_cli.py {% endif %}',
-    '{% if cookiecutter.using_R == "Yes" %} src/{{ cookiecutter.repo_name.replace("-", "_") }} {% endif %}',
+    '{% if cookiecutter.using_R == "Yes" %} src/{{ cookiecutter.__pypkg }} {% endif %}',
     '{% if cookiecutter.VCS != "Gitlab" %} .gitlab-ci.yml {% endif %}',
 ]
 

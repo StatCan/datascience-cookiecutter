@@ -1,6 +1,6 @@
 from typer.testing import CliRunner
 
-from {{ cookiecutter.repo_name.replace('-', '_') }}.cli import app
+from {{ cookiecutter.__pypkg }}.cli import app
 
 runner = CliRunner()
 

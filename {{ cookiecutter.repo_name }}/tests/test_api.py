@@ -1,6 +1,6 @@
 from fastapi.testclient import TestClient
 
-from {{ cookiecutter.repo_name.replace('-', '_') }}.api import app
+from {{ cookiecutter.__pypkg }}.api import app
 
 client = TestClient(app)
 
