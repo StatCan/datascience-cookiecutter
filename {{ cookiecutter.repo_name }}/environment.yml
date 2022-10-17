@@ -5,7 +5,8 @@ dependencies:
   - pip
   - sphinx
   - sphinx-intl
+  - myst-parser
+  - sphinx-autoapi
   - pre-commit
   - pytest
-  - myst-parser
   - coverage
