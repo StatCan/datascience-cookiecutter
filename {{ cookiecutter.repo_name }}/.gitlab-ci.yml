@@ -6,7 +6,7 @@ stages:
 # Prevent detached workflows on merge requests
 workflow:
   rules:
-    - if: '${CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
       when: never
     - when: always
 
