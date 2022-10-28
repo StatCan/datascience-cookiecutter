@@ -71,6 +71,6 @@ pre-commit hooks:
   before_script:
     - pip --disable-pip-version-check install pre-commit
     # GitLab doesn't seem to check out a repo in the commit, so fetch it
-    - git fetch -q --depth=0 origin
+    - git fetch -q --depth=1 origin
   script:
     - pre-commit run --from-ref origin/${CI_DEFAULT_BRANCH} --to-ref ${CI_COMMIT_SHA}
