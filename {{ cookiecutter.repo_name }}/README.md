@@ -1,4 +1,4 @@
-[(Français)](#le-nom-du-projet)
+[(Français)](#{{ cookiecutter.project_name_fr }})
 
 ## {{ cookiecutter.project_name_en }}
 

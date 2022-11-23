@@ -1,11 +1,11 @@
 .PHONY:
-	coverage
+	{%- if cookiecutter.using_R == "No" -%} coverage {%- endif %}
 	docs
 	help
 	messages
 	prepare_docs_folder
 	requirements
-	test
+	{%- if cookiecutter.using_R == "No" -%} test {%- endif %}
 	wiki
 
 # Supported CLI arguments
@@ -59,13 +59,17 @@ docs: prepare_docs_folder requirements
 	sphinx-build ${DOCS_VERSION} -b html ./docs "$(DOCS_BUILDDIR_EN)"
 	sphinx-build ${DOCS_VERSION} -b html ./docs "$(DOCS_BUILDDIR_FR)" -D language=fr
 
+{%- if cookiecutter.using_R == "No" %}
 # Run code coverage
 coverage: requirements
 	coverage run -m pytest
+{%- endif %}
 
+{%- if cookiecutter.using_R == "No" %}
 # Run all the tests
 test: requirements
 	pytest tests/ -v -s
+{%- endif %}
 
 ## Get help on all make commands; referenced from https://github.com/best-practice-and-impact/govcookiecutter
 help:
