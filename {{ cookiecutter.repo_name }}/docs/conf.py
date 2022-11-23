@@ -29,7 +29,7 @@ extensions = [
     "sphinx.ext.autosectionlabel",
     "sphinx.ext.autosummary",
     "sphinx.ext.napoleon",
-    "autoapi.extension",
+    {% if cookiecutter.using_R == "No" %}"autoapi.extension",{% endif %}
     "myst_parser",
     "sphinx.ext.todo",
 ]
@@ -213,6 +213,7 @@ myst_enable_extensions = [
 # Show TODOs in the output
 todo_include_todos = True
 
+{% if cookiecutter.using_R == "No" %} 
 # -- Options for autoapi ---------------------------------------------------------------
 
 # Set the source code language to generage API docs for (defaults to Python)
@@ -220,3 +221,4 @@ todo_include_todos = True
 
 # Where to look for source code
 autoapi_dirs=['../src']
+{% endif %}
