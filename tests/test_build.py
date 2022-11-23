@@ -74,9 +74,10 @@ def test_is_py_pkg(cookies, inp_using_r: str) -> None:
     # Code should be in a src directory
     assert result.project_path.joinpath('src').exists()
 
-    # Setup and TOML files needs to exist
-    assert result.project_path.joinpath('setup.cfg').exists()
-    assert result.project_path.joinpath('pyproject.toml').exists()
+    # Setup and TOML files needs to exist for Python only
+    if inp_using_r == "No":
+        assert result.project_path.joinpath('setup.cfg').exists()
+        assert result.project_path.joinpath('pyproject.toml').exists()
 
 
 @pytest.mark.parametrize("inp_using_r", ["No", "Yes"])
