@@ -1,6 +1,6 @@
 [(Français)](#le-nom-du-projet)
 
-## StatCan Data Science Cookiecuttter
+## StatCan Data Science Cookiecutter
 
 A ``cookiecutter`` template for data science projects within Statistics Canada and wider public sector. The goal is to reduce the amount of set up tasks associated with starting data science projects at Statistics Canada.
 
