@@ -862,7 +862,6 @@ data/*
 
 # Ignore the contents of the `data` sub-folders, except for their `.gitkeep` files; adapted from
 # https://stackoverflow.com/a/20652768
-!data/**/
 data/external/*
 data/raw/*
 data/interim/*
