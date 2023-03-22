@@ -8,7 +8,7 @@ repos:
         name: nbstripout - Strip outputs from notebooks (auto-fixes)
         args:
           - --extra-keys
-          - "metadata.colab metadata.kernelspec metadata.metadata.interpreter cell.metadata.colab cell.metadata.executionInfo cell.metadata.id cell.metadata.outputId"
+          - "metadata.vscode.interpreter.hash metadata.colab metadata.kernelspec metadata.metadata.interpreter cell.metadata.colab cell.metadata.executionInfo cell.metadata.id cell.metadata.outputId"
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
