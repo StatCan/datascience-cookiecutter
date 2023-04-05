@@ -3,11 +3,11 @@ requires = ["setuptools >= 40.6.0", "wheel", "setuptools_scm[toml]>=6.2"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = {{ cookiecutter.__pypkg }}
+name = "{{ cookiecutter.__pypkg }}"
 # Add brief project description
-description = My package description
-readme = README.md
-keywords = one, two
+description = "My package description"
+readme = "README.md"
+keywords = ["one", "two"]
 license = {text = "MIT"}
 license-files = ['LICENSE']
 # Set the minimum version of Python required to run the code
@@ -22,19 +22,19 @@ classifiers = [
 dynamic = ["version"]
 # Update and version pin all runtime dependencies
 dependencies = [
-    "fastapi"
+    "fastapi",
     "typer"
 ]
 
 # Set any development related dependencies here
 [project.optional-dependencies]
 tests = [
-    "pytest"
-    "requests"
-    "sphinx"
-    "sphinx-intl"
-    "myst-parser"
-    "sphinx-autoapi"
+    "pytest",
+    "requests",
+    "sphinx",
+    "sphinx-intl",
+    "myst-parser",
+    "sphinx-autoapi",
 ]
 
 [tool.setuptools.packages.find]
