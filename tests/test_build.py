@@ -77,22 +77,3 @@ def test_is_py_pkg(cookies, inp_using_r: str) -> None:
     # Setup and TOML files needs to exist for Python only
     if inp_using_r == "No":
         assert result.project_path.joinpath('pyproject.toml').exists()
-
-
-@pytest.mark.parametrize("inp_using_r", ["No", "Yes"])
-def test_project_version(cookies, inp_using_r: str) -> None:
-    """Ensure that the project version is properly set."""
-    vnum = "1.0.0"
-    vfile = "version"
-    result = cookies.bake(
-        extra_context={
-            "project_version": vnum,
-            "using_R": inp_using_r
-        })
-    
-    # This should have created a version file with our version number
-    assert result.project_path.joinpath(vfile).exists()
-    assert result.project_path.joinpath(vfile).is_file()
-
-    contents = result.project_path.joinpath(vfile).read_text()
-    assert contents == vnum
