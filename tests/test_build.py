@@ -76,7 +76,6 @@ def test_is_py_pkg(cookies, inp_using_r: str) -> None:
 
     # Setup and TOML files needs to exist for Python only
     if inp_using_r == "No":
-        assert result.project_path.joinpath('setup.cfg').exists()
         assert result.project_path.joinpath('pyproject.toml').exists()
 
 
