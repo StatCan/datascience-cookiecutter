@@ -883,3 +883,6 @@ docs/reference/api/*
 
 # Ignore Sphinx documentation link checking folder
 docs/_linkcheck/
+
+# Managed by setuptools_scm
+src/{{ cookiecutter.__pypkg }}/_version.py
