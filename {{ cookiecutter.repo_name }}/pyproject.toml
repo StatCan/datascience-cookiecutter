@@ -22,8 +22,8 @@ classifiers = [
 dynamic = ["version"]
 # Update and version pin all runtime dependencies
 dependencies = [
-    "fastapi",
-    "typer"
+    "fastapi>=0.95.1",
+    "typer>=0.7.0"
 ]
 
 # Set any development related dependencies here
