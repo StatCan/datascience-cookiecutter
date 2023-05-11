@@ -2,17 +2,16 @@ channels:
    - defaults
    - conda-forge
 dependencies:
-  - pip
-  - sphinx
-  - sphinx_rtd_theme
-  - pytest
-  - coverage
-  - sphinx-intl
-  - sphinx-autoapi
-  - myst-parser
-  - pre-commit
+  - autoflake
+  - black
   - cruft
   - flake8
-  - black
-  - autoflake
+  - myst-parser
+  - pip
   - pre-commit
+  - pytest
+  - pytest-cov
+  - sphinx
+  - sphinx-autoapi
+  - sphinx-intl
+  - sphinx_rtd_theme
