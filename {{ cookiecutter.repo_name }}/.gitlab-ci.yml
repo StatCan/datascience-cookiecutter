@@ -1,0 +1,76 @@
+stages:
+  - pypkg
+  - codecheck
+
+
+# Prevent detached workflows on merge requests
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
+    - when: always
+
+
+# -------------------------------------------------------------------------------------
+# Base template for Python jobs.
+#--------------------------------------------------------------------------------------
+.python:base:
+  image: python
+  variables:
+    PIP_CACHE_DIR: "${CI_PROJECT_DIR}/.cache/pip"
+  cache:
+    key: "${CI_JOB_NAME}"
+    paths:
+      - .cache/pip
+
+{%- if cookiecutter.using_R == "No" %}
+# -------------------------------------------------------------------------------------
+# Build a distributable Python package.
+# -------------------------------------------------------------------------------------
+python package build:
+  stage: pypkg
+  extends: .python:base
+  variables:
+    # Options to feed to python -m build
+    BUILD_OPTIONS: ""
+    # Packages required for the build
+    BUILD_REQUIRES: ""
+    # Whether to generate a tarball
+    SDIST: "true"
+    # Whether to generate a wheel
+    WHEEL: "true"
+    # What directory to run in
+    SRCDIR: "${CI_PROJECT_DIR}"
+  before_script:
+    - python -m pip install build ${BUILD_REQUIRES}
+  script:
+    - python -m build ${SRCDIR:=.}
+          --outdir ${CI_PROJECT_DIR}
+          $(test ${SDIST} = "true" && echo "--sdist")
+          $(test ${WHEEL} = "true" && echo "--wheel")
+          ${BUILD_OPTIONS}
+  artifacts:
+    paths:
+      - "*.tar.*"
+      - "*.whl"
+ {%- endif %}
+
+# ------------------------------------------------------------------------------------
+# Run pre-commit checks.
+# This is a safeguard in case they weren't run prior to commit.
+# Note: Any of the autofix hooks will alter the commit and cause a failure.
+# ------------------------------------------------------------------------------------
+pre-commit hooks:
+  stage: codecheck
+  extends: .python:base
+  variables:
+    PRE_COMMIT_HOME: ${CI_PROJECT_DIR}/.cache/pre-commit
+  cache:
+    paths:
+      - ${PRE_COMMIT_HOME}
+  before_script:
+    - pip --disable-pip-version-check install pre-commit
+    # GitLab doesn't seem to check out a repo in the commit, so fetch it
+    - git fetch -q --depth=1 origin
+  script:
+    - pre-commit run --from-ref origin/${CI_DEFAULT_BRANCH} --to-ref ${CI_COMMIT_SHA}

@@ -1,3 +1,52 @@
 [build-system]
-requires = ["setuptools >= 40.6.0", "wheel"]
+requires = ["setuptools >= 40.6.0", "wheel", "setuptools_scm[toml]>=6.2"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "{{ cookiecutter.__pypkg }}"
+# Add brief project description
+description = "My package description"
+readme = "README.md"
+keywords = ["one", "two"]
+license = {text = "MIT"}
+license-files = ['LICENSE']
+# Set the minimum version of Python required to run the code
+requires-python = ">=3.9"
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+dynamic = ["version"]
+# Update and version pin all runtime dependencies
+dependencies = [
+    "fastapi>=0.95.1",
+    "typer>=0.7.0"
+]
+
+# Set any development related dependencies here
+[project.optional-dependencies]
+tests = [
+    "pytest",
+    "requests",
+    "sphinx",
+    "sphinx-intl",
+    "myst-parser",
+    "sphinx-autoapi",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
+
+[tool.setuptools.dynamic]
+version = {file = "version"}
+
+# Setuptools_scm will create the version based on git tags
+[tool.setuptools_scm]
+write_to = "src/{{ cookiecutter.__pypkg }}/_version.py"
+
+[tool.pytest.ini_options]
+pythonpath = [ "src" ]

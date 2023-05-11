@@ -862,7 +862,6 @@ data/*
 
 # Ignore the contents of the `data` sub-folders, except for their `.gitkeep` files; adapted from
 # https://stackoverflow.com/a/20652768
-!data/**/
 data/external/*
 data/raw/*
 data/interim/*
@@ -884,3 +883,6 @@ docs/reference/api/*
 
 # Ignore Sphinx documentation link checking folder
 docs/_linkcheck/
+
+# Managed by setuptools_scm
+src/{{ cookiecutter.__pypkg }}/_version.py

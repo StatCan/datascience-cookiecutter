@@ -12,10 +12,10 @@
 # these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 
-import os
-import sys
+# import os
+# import sys
 
-sys.path.insert(0, os.path.abspath(".."))
+# sys.path.insert(0, os.path.abspath("../src"))
 
 # -- General configuration ------------------------------------------------
 
@@ -29,7 +29,7 @@ extensions = [
     "sphinx.ext.autosectionlabel",
     "sphinx.ext.autosummary",
     "sphinx.ext.napoleon",
-    "autoapi.extension",
+    {% if cookiecutter.using_R == "No" %}"autoapi.extension",{% endif %}
     "myst_parser",
     "sphinx.ext.todo",
 ]
@@ -54,10 +54,9 @@ author = "{{ cookiecutter.organisation }}"
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the built
 # documents.
-# The short X.Y.Z version.
-version = "{{ cookiecutter.project_version }}"
-# The full version, including alpha/beta/rc tags.
-release = "{{ cookiecutter.project_version }}"
+# from importlib.metadata import version
+# release = version('myproject')
+# version = '.'.join(release.split('.')[:2])
 
 # List of patterns, relative to source directory, that match files and directories to
 # ignore when looking for source files. These patterns also affect html_static_path and
@@ -211,6 +210,7 @@ myst_enable_extensions = [
 # Show TODOs in the output
 todo_include_todos = True
 
+{% if cookiecutter.using_R == "No" %} 
 # -- Options for autoapi ---------------------------------------------------------------
 
 # Set the source code language to generage API docs for (defaults to Python)
@@ -218,3 +218,4 @@ todo_include_todos = True
 
 # Where to look for source code
 autoapi_dirs=['../src']
+{% endif %}

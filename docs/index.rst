@@ -12,7 +12,7 @@ pre-commit hooks.
    :maxdepth: 2
    :caption: Contents:
 
-   README
+   usage
    structure/index
 
 Indices and tables

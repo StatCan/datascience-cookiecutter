@@ -2,8 +2,12 @@
     "project_name_en": "Your new project name",
     "project_name_fr": "Votre nom de projet",
     "organisation": "StatCan",
-    "repo_name": "{{ cookiecutter.project_name_en.lower().replace(' ', '-') }}",
-    "project_version": "0.0.1",
+    "repo_name": "{{ cookiecutter.project_name_en | slugify }}",
 
-    "using_R": ["No", "Yes"]
+    "using_R": ["No", "Yes"],
+    "VCS": ["Gitlab", "Github"],
+
+    "__pypkg": "{{ cookiecutter.repo_name.replace('-', '_') }}",
+
+    "_extensions": ["cookiecutter.extensions.SlugifyExtension"]
 }
