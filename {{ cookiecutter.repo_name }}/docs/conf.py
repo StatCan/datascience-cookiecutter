@@ -54,12 +54,9 @@ author = "{{ cookiecutter.organisation }}"
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the built
 # documents.
-# Note: You probably want to set the version information via ../version. Only change
-# this is you are trying to override the version in that file.
-# The short X.Y.Z version.
-# version = "{{ cookiecutter.project_version }}"
-# The full version, including alpha/beta/rc tags.
-# release = "{{ cookiecutter.project_version }}"
+# from importlib.metadata import version
+# release = version('myproject')
+# version = '.'.join(release.split('.')[:2])
 
 # List of patterns, relative to source directory, that match files and directories to
 # ignore when looking for source files. These patterns also affect html_static_path and

@@ -65,7 +65,7 @@ initial set of files:
 
 .. code-block:: sh
 
-    $ git init .
+    $ git init -b main .
     $ git add -A
     $ git commit -m "Initialize project"
     $ git remote add origin <gitlab project url> # https://gitlab.k8s.cloud.statcan.ca/datascience-division/[subgroup]/[project_repo].git

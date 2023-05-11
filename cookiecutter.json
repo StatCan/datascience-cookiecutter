@@ -3,7 +3,6 @@
     "project_name_fr": "Votre nom de projet",
     "organisation": "StatCan",
     "repo_name": "{{ cookiecutter.project_name_en | slugify }}",
-    "project_version": "0.0.1",
 
     "using_R": ["No", "Yes"],
     "VCS": ["Gitlab", "Github"],

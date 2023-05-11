@@ -16,9 +16,11 @@
    reference/index
    wiki/Home
 
+   {%- if cookiecutter.using_R == "No" %}
    .. API documentation will be generated automatically.
    
    autoapi/index
+   {%- endif %}
 
 
 Indices and tables
