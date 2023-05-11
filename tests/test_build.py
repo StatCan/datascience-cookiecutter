@@ -77,3 +77,19 @@ def test_is_py_pkg(cookies, inp_using_r: str) -> None:
     # Setup and TOML files needs to exist for Python only
     if inp_using_r == "No":
         assert result.project_path.joinpath('pyproject.toml').exists()
+
+
+@pytest.mark.parametrize("environment", ["conda", "venv"])
+def test_target_env(cookies, environment: str) -> None:
+    """Validate conda support renders appropriately."""
+    result = cookies.bake(extra_context={"environment": environment})
+
+    # For conda environments there should be some stubbed files
+    conda_envs_found = result.project_path.joinpath("conda-envs").exists()
+    conda_env_stub = result.project_path.joinpath("environment.yml").exists()
+    if environment == "conda":
+        assert conda_envs_found == True
+        assert conda_env_stub == True
+    else:
+        assert conda_envs_found == False
+        assert conda_env_stub == False
