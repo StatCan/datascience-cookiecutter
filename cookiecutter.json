@@ -6,6 +6,7 @@
 
     "using_R": ["No", "Yes"],
     "VCS": ["Gitlab", "Github"],
+    "environment": ["conda", "venv"],
 
     "__pypkg": "{{ cookiecutter.repo_name.replace('-', '_') }}",
 
