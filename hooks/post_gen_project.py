@@ -10,7 +10,6 @@ from pathlib import Path
 
 # Files to be completely removed
 REMOVE_PATHS = [
-    '{% if cookiecutter.using_R == "Yes" %} setup.cfg {% endif %}',
     '{% if cookiecutter.using_R == "Yes" %} pyproject.toml {% endif %}',
     '{% if cookiecutter.using_R == "Yes" %} tests/test_api.py {% endif %}',
     '{% if cookiecutter.using_R == "Yes" %} tests/test_cli.py {% endif %}',
