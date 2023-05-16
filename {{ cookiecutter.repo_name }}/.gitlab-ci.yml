@@ -76,6 +76,24 @@ python unit tests:
     reports:
       junit: ${COVERAGE_FILE}
 
+{% else %}
+
+# ------------------------------------------------------------------------------------
+# Run unit tests through testthat package
+#
+# This generates JUnit reports for the CI system to report on test coverage.
+# https://testthat.r-lib.org/reference/test_package.html#r-cmd-check
+# https://docs.gitlab.com/ee/ci/testing/unit_test_reports.html
+# ------------------------------------------------------------------------------------
+unit tests:
+  stage: test
+  image: rocker/rstudio
+  script:
+  - R -e 'install.packages(c("testthat", "xml2"))'
+  - R CMD build . --no-build-vignettes --no-manual
+  - PKG_FILE_NAME=$(ls -1t *.tar.gz | head -n 1)
+  - R CMD check "${PKG_FILE_NAME}" --no-build-vignettes --no-manual
+
  {%- endif %}
 
 # ------------------------------------------------------------------------------------
