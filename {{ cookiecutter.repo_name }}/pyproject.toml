@@ -30,6 +30,7 @@ dependencies = [
 [project.optional-dependencies]
 tests = [
     "pytest",
+    "pytest-cov",
     "requests",
     "sphinx",
     "sphinx-intl",

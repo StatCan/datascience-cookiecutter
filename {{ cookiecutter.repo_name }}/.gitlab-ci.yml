@@ -1,6 +1,7 @@
 stages:
-  - pypkg
   - codecheck
+  - pypkg
+  - test
 
 
 # Prevent detached workflows on merge requests
@@ -53,6 +54,45 @@ python package build:
     paths:
       - "*.tar.*"
       - "*.whl"
+
+# -------------------------------------------------------------------------------------
+# Run unit tests against the built package
+# -------------------------------------------------------------------------------------
+python unit tests:
+  stage: test
+  extends: .python:base
+  dependencies:
+    - python package build
+  variables:
+    COVERAGE_FILE: "report.xml"
+  before_script:
+  - pip install --disable-pip-version-check  --find-links {{ cookiecutter.__pypkg }}[tests]
+  script:
+  - pytest --junitxml=${COVERAGE_FILE} --cov={{ cookiecutter.__pypkg }}
+  coverage: '/(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/'
+  artifacts:
+    when: always
+    reports:
+      junit: ${COVERAGE_FILE}
+
+{% else %}
+
+# ------------------------------------------------------------------------------------
+# Run unit tests through testthat package
+#
+# This generates JUnit reports for the CI system to report on test coverage.
+# https://testthat.r-lib.org/reference/test_package.html#r-cmd-check
+# https://docs.gitlab.com/ee/ci/testing/unit_test_reports.html
+# ------------------------------------------------------------------------------------
+unit tests:
+  stage: test
+  image: rocker/rstudio
+  script:
+  - R -e 'install.packages(c("testthat", "xml2"))'
+  - R CMD build . --no-build-vignettes --no-manual
+  - PKG_FILE_NAME=$(ls -1t *.tar.gz | head -n 1)
+  - R CMD check "${PKG_FILE_NAME}" --no-build-vignettes --no-manual
+
  {%- endif %}
 
 # ------------------------------------------------------------------------------------
