@@ -61,7 +61,7 @@ additional metadata necessary when publishing a package.
 More information can be found in the `Python packaging user guide`_.
 
 .. _detect-secrets: https://github.com/Yelp/detect-secrets
-.. _cookiecutter: https://cookiecutter.readthedocs.io/
+.. _cookiecutter: https://cookiecutter.readthedocs.io/en/stable/
 .. _PEP 518: https://peps.python.org/pep-0518/
 .. _Python packaging user guide: https://packaging.python.org/en/latest/tutorials/packaging-projects/#configuring-metadata
 .. _pip specific: https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/
