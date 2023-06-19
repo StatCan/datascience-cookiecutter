@@ -121,5 +121,5 @@ To update your project with the latest template files::
 
 To see all that ``cruft`` has to offer you should refer to the `cruft`_ documentation.
 
-.. cookiecutter: https://cookiecutter.readthedocs.io/en/stable/
-.. cruft: https://cruft.github.io/cruft/
+.. _cookiecutter: https://cookiecutter.readthedocs.io/en/stable/
+.. _cruft: https://cruft.github.io/cruft/
