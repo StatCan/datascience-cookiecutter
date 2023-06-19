@@ -136,38 +136,18 @@ def test_target_env(cookies, environment: str) -> None:
         assert conda_env_stub == False
 
 
-# @pytest.mark.skip("Raises py.error.EBUSY error when trying to clean up test files")
-# def test_pypkg_build(cookies):
-#     """Try building the resulting python package."""
-#     result = cookies.bake(extra_context={"using_R": "No"})
-#     print(result.project_path)
-#     assert result.project_path.is_dir()
+def test_pypkg_build(cookies):
+    """
+    Try building the resulting python package.
 
-#     # Change to the baked project and try to execute a build
-#     os.chdir(result.project_path)
-#     # Python uses SCM for version numbering, so init a repo
-#     subprocess.run(["git", "init", "-b", "main", "."])
-#     subprocess.run(["git", "add", "-A"])
-#     subprocess.run(["git", "commit", "-m", "'Initialize'"])
-#     # Try to build the package
-#     completed = subprocess.run(["python", "-m", "build"])
-#     assert completed.returncode == 0
-
-#     # Clean up residuals as git creates hard to remove files
-#     rmtree(result.project_path)
-
-def test_pypkg_build_sep_dir(cookies):
+    This is done in a separate context to avoid git polluting the space with read-only
+    files and potentially disrupting other tests.
+    """
     with bake_in_temp_dir(cookies, extra_context={'using_R': 'No'}) as result:
         assert result.project_path.is_dir()
 
         run_inside_dir("git init -b main .", str(result.project_path))
         run_inside_dir("git add -A", str(result.project_path))
         run_inside_dir("git commit -m 'Initialize'", str(result.project_path))
-        run_inside_dir("python -m build", str(result.project_path))
-        # Python uses SCM for version numbering, so init a repo
-        subprocess.run(["git", "init", "-b", "main", "."])
-        subprocess.run(["git", "add", "-A"])
-        subprocess.run(["git", "commit", "-m", "'Initialize'"])
-        # Try to build the package
-        completed = subprocess.run(["python", "-m", "build"])
-        assert completed.returncode == 0
+        proc = run_inside_dir("python -m build", str(result.project_path))
+        assert proc.returncode == 0
