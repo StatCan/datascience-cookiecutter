@@ -1,6 +1,5 @@
 """Test building the project."""
 
-import errno
 import os
 import re
 import subprocess
@@ -98,7 +97,7 @@ def test_target_env(cookies, environment: str) -> None:
         assert conda_env_stub == False
 
 
-@pytest.mark.skip("Raises py.error.EBUSY error when trying to clean up test files")
+# @pytest.mark.skip("Raises py.error.EBUSY error when trying to clean up test files")
 def test_pypkg_build(cookies):
     """Try building the resulting python package."""
     result = cookies.bake(extra_context={"using_R": "No"})
