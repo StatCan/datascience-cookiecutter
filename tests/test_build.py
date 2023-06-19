@@ -1,6 +1,9 @@
 """Test building the project."""
 
+import errno
+import os
 import re
+import subprocess
 
 import pytest
 from sphinx.cmd.build import main
@@ -93,3 +96,20 @@ def test_target_env(cookies, environment: str) -> None:
     else:
         assert conda_envs_found == False
         assert conda_env_stub == False
+
+
+@pytest.mark.skip("Raises py.error.EBUSY error when trying to clean up test files")
+def test_pypkg_build(cookies):
+    """Try building the resulting python package."""
+    result = cookies.bake(extra_context={"using_R": "No"})
+    assert result.project_path.is_dir()
+
+    # Change to the baked project and try to execute a build
+    os.chdir(result.project_path)
+    # Python uses SCM for version numbering, so init a repo
+    subprocess.run(["git", "init", "-b", "main", "."])
+    subprocess.run(["git", "add", "-A"])
+    subprocess.run(["git", "commit", "-m", "'Initialize'"])
+    # Try to build the package
+    completed = subprocess.run(["python", "-m", "build"])
+    assert completed.returncode == 0
