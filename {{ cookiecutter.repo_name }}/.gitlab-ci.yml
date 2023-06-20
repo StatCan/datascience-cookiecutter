@@ -64,16 +64,20 @@ python unit tests:
   dependencies:
     - python package build
   variables:
-    COVERAGE_FILE: "report.xml"
+    JUNIT_FILE: "report.xml"
+    COBERTURA_FILE: "coverage.xml"
   before_script:
   - pip install --disable-pip-version-check  --find-links . {{ cookiecutter.__pypkg }}[tests]
   script:
-  - pytest --junitxml=${COVERAGE_FILE} --cov={{ cookiecutter.__pypkg }}
+  - pytest --junitxml=${JUNIT_FILE} --cov={{ cookiecutter.__pypkg }} --cov-report term --cov-report xml:${COBERTURA_FILE}
   coverage: '/(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/'
   artifacts:
     when: always
     reports:
-      junit: ${COVERAGE_FILE}
+      junit: ${JUNIT_FILE}
+      coverage_report:
+        coverage_format: cobertura
+        path: ${COBERTURA_FILE}
 
 {% else %}
 
