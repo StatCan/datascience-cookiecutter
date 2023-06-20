@@ -1,9 +1,50 @@
 """Test building the project."""
 
+import os
 import re
+import shlex
+import subprocess
+from contextlib import contextmanager
 
 import pytest
+from cookiecutter.utils import rmtree
 from sphinx.cmd.build import main
+
+@contextmanager
+def inside_dir(dirpath):
+    """
+    Execute code from inside the given directory
+    :param dirpath: String, path of the directory the command is being run.
+    """
+    old_path = os.getcwd()
+    try:
+        os.chdir(dirpath)
+        yield
+    finally:
+        os.chdir(old_path)
+
+
+@contextmanager
+def bake_in_temp_dir(cookies, *args, **kwargs):
+    """
+    Delete the temporal directory that is created when executing the tests
+    :param cookies: pytest_cookies.Cookies,
+        cookie to be baked and its temporal files will be removed
+    """
+    result = cookies.bake(*args, **kwargs)
+    try:
+        yield result
+    finally:
+        rmtree(str(result.project))
+
+def run_inside_dir(command, dirpath):
+    """
+    Run a command from inside a given directory, returning the exit status
+    :param command: Command that will be executed
+    :param dirpath: String, path of the directory the command is being run.
+    """
+    with inside_dir(dirpath):
+        return subprocess.run(shlex.split(command))
 
 @pytest.mark.parametrize("inp_en_name", ["a", "b"])
 @pytest.mark.parametrize("inp_fr_name", ["x", "y"])
@@ -93,3 +134,20 @@ def test_target_env(cookies, environment: str) -> None:
     else:
         assert conda_envs_found == False
         assert conda_env_stub == False
+
+
+def test_pypkg_build(cookies):
+    """
+    Try building the resulting python package.
+
+    This is done in a separate context to avoid git polluting the space with read-only
+    files and potentially disrupting other tests.
+    """
+    with bake_in_temp_dir(cookies, extra_context={'using_R': 'No'}) as result:
+        assert result.project_path.is_dir()
+
+        run_inside_dir("git init -b main .", str(result.project_path))
+        run_inside_dir("git add -A", str(result.project_path))
+        run_inside_dir("git commit -m 'Initialize'", str(result.project_path))
+        proc = run_inside_dir("python -m build", str(result.project_path))
+        assert proc.returncode == 0
