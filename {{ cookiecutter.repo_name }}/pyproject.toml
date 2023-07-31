@@ -28,6 +28,7 @@ dependencies = [
 # Set any development related dependencies here
 [project.optional-dependencies]
 tests = [
+    "httpx",
     "pytest",
     "pytest-cov",
     "requests",
