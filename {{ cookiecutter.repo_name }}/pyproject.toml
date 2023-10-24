@@ -41,9 +41,6 @@ tests = [
 where = ["src"]
 namespaces = false
 
-[tool.setuptools.dynamic]
-version = {file = "version"}
-
 # Setuptools_scm will create the version based on git tags
 [tool.setuptools_scm]
 write_to = "src/{{ cookiecutter.__pypkg }}/_version.py"
