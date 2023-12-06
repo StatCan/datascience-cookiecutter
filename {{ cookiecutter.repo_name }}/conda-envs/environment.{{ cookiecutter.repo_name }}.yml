@@ -13,9 +13,7 @@ dependencies:
   - myst-parser
   - pre-commit
   - cruft
-  - flake8
-  - black
-  - autoflake
+  - ruff
   - pre-commit
   - build
   - twine
