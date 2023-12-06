@@ -79,6 +79,10 @@ unfixable = []
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
 [tool.ruff.mccabe]
+# Data processing can end up with multiple if-elif-else statements. Allow liberal
+# control flow, but block overly complex structures. This isn't foolproof so may need
+# to be tuned for the project.
+# See https://en.wikipedia.org/wiki/Cyclomatic_complexity for more on complexity.
 max-complexity = 9
 
 [tool.ruff.format]
