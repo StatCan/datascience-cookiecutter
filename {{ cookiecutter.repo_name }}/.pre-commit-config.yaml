@@ -1,14 +1,6 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
-  - repo: https://github.com/kynan/nbstripout
-    rev: 0.6.1
-    hooks:
-      - id: nbstripout
-        name: nbstripout - Strip outputs from notebooks (auto-fixes)
-        args:
-          - --extra-keys
-          - "metadata.vscode.interpreter.hash metadata.colab metadata.kernelspec metadata.metadata.interpreter cell.metadata.colab cell.metadata.executionInfo cell.metadata.id cell.metadata.outputId"
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
@@ -21,45 +13,24 @@ repos:
       - id: check-toml
       - id: trailing-whitespace
         name: Check for trailing whitespaces (auto-fixes)
-  - repo: https://github.com/pycqa/isort
-    rev: 5.12.0
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.1.7
     hooks:
-      - id: isort
-        name: isort - Sort Python imports (auto-fixes)
-        types: [ cython, pyi, python ]
-        args: [ "--profile", "black", "--filter-files" ]
-  # Unclear if black is going to be used.
-  - repo: https://github.com/psf/black
-    rev: 23.1.0 # Replace by any tag/version: https://github.com/psf/black/tags
+      - id: ruff
+        types_or: [ python, pyi, jupyter ]
+        args: [ --fix ]
+      - id: ruff-format
+        types_or: [ python, pyi, jupyter ]
+  # Helps to ensure no results get leaked into a commit.
+  # Also cleans the notebook to avoid false secret detection.
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.6.1
     hooks:
-      - id: black
-        name: black - consistent Python code formatting (auto-fixes)
-        language_version: python # Should be a command that runs python3.6+
-  - repo: https://github.com/myint/autoflake
-    rev: v2.0.2
-    hooks:
-      - id: autoflake
-        args: ['--in-place', '--remove-all-unused-imports', '--ignore-init-module-imports']
-  - repo: https://github.com/pycqa/flake8
-    rev: 6.0.0
-    hooks:
-      - id: flake8
-        name: flake8 - Python linting
-  - repo: https://github.com/nbQA-dev/nbQA
-    rev: 1.6.3
-    hooks:
-      - id: nbqa-isort
-        name: nbqa-isort - Sort Python imports (notebooks; auto-fixes)
-        args: [ --nbqa-mutate ]
-        additional_dependencies: [ isort==5.12.0 ]
-      # - id: nbqa-black
-      #   name: nbqa-black - consistent Python code formatting (notebooks; auto-fixes)
-      #   args: [ --nbqa-mutate ]
-      #   additional_dependencies: [ black==23.1.0 ]
-      # Disabled for now until it's clear how to add noqa to specific cells of a Jupyter notebook
-      #- id: nbqa-flake8
-      #  name: nbqa-flake8 - Python linting (notebooks)
-      #  additional_dependencies: [ flake8==6.0.0 ]
+      - id: nbstripout
+        name: nbstripout - Strip outputs from notebooks (auto-fixes)
+        args:
+          - --extra-keys
+          - "metadata.vscode.interpreter.hash metadata.colab metadata.kernelspec metadata.metadata.interpreter cell.metadata.colab cell.metadata.executionInfo cell.metadata.id cell.metadata.outputId"
   - repo: https://github.com/Yelp/detect-secrets
     rev: v1.4.0
     hooks:
