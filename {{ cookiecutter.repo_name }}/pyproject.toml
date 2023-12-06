@@ -48,3 +48,49 @@ write_to = "src/{{ cookiecutter.__pypkg }}/_version.py"
 
 [tool.pytest.ini_options]
 pythonpath = [ "src" ]
+
+[tool.ruff]
+# Exclude some directories from processing
+exclude = [
+    ".git",
+    ".venv",
+    "build",
+    "dist",
+    "venv",
+]
+
+# Same settings as Black
+line-length = 88
+indent-width = 4
+
+# Python 3.10 is the current corporate standard
+target-version = "py310"
+
+[tool.ruff.lint]
+# Which rules to turn on
+select = ["F", "E", "W", "C", "I", "N", "D", "YTT", "ANN", "BLE", "B", "A", "PTH", "PD"]
+# Selectively ignore specific rules (some rules conflict)
+ignore = ["D203", "D211", "D212"]
+
+# Try to fix all enabled rules
+fixable = [ "ALL" ]
+unfixable = []
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.mccabe]
+max-complexity = 9
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
